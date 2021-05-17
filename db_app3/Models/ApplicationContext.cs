@@ -28,14 +28,7 @@ namespace db_app3.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
-            modelBuilder.Entity<Post>()
-                .HasOne(p => p.User)
-                .WithMany(b => b.Posts);
-            
-            modelBuilder.Entity<User>()
-                .Navigation(b => b.Posts)
-                .UsePropertyAccessMode(PropertyAccessMode.Property);
-            
+
             base.OnModelCreating(modelBuilder);
             
         }

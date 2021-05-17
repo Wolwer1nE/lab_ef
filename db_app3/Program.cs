@@ -10,12 +10,12 @@ namespace db_app3
     {
         static void Main(string[] args)
         {
-           // InitialSetup();
+            InitialSetup();
             using var dbContext = new ApplicationContext();
             var users = dbContext.Users.ToList();
             foreach (var user in users)
             {
-                Console.WriteLine($"{user.Id} - {user.Name} - {user.Age}");
+                Console.WriteLine($"{user.UserId} - {user.Name} - {user.Age}");
                 if (user.Posts != null)
                 {
                     foreach (var post in user.Posts)
